@@ -17,19 +17,19 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: makeline-service
-          image: wuiiango/makeline-service:latest # Custom Makeline service image
+          image: wuiiango/makeline-service:v1 # Custom Makeline service image
           ports:
             - containerPort: 3001 # Makeline service listens on this port
           env: # Environment variables for configuration
             - name: AZURE_SERVICE_BUS_CONNECTION_STRING
               valueFrom:
                 secretKeyRef:
-                  name: azure-service-bus-secret
+                  name: secrets
                   key: AZURE_SERVICE_BUS_CONNECTION_STRING
             - name: ORDER_QUEUE_NAME
               valueFrom:
                 secretKeyRef:
-                  name: azure-service-bus-secret
+                  name: secrets
                   key: ORDER_QUEUE_NAME
             - name: ORDER_DB_URI
               value: "mongodb://mongodb:27017" # MongoDB connection string

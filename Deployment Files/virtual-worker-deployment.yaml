@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: virtual-worker
+spec:
+  replicas: 1 # Adjust as needed
+  selector:
+    matchLabels:
+      app: virtual-worker
+  template:
+    metadata:
+      labels:
+        app: virtual-worker
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+        - name: virtual-worker
+          image: wuiiango/virtual-worker:v1
+          env: # Environment variables
+            - name: AZURE_SERVICE_BUS_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: AZURE_SERVICE_BUS_CONNECTION_STRING
+            - name: ORDER_QUEUE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: ORDER_QUEUE_NAME
+            - name: ORDER_DB_URI
+              value: "mongodb://mongodb:27017" # MongoDB connection string
+            - name: ORDER_DB_NAME
+              value: "orderdb"
+            - name: ORDER_DB_COLLECTION_NAME
+              value: "orders"
+          resources:
+            requests:
+              cpu: 1m
+              memory: 6Mi
+            limits:
+              cpu: 5m
+              memory: 20Mi
+          livenessProbe: # Health check
+            httpGet:
+              path: /health
+              port: 8080
+            failureThreshold: 5
+            initialDelaySeconds: 3
+            periodSeconds: 3
