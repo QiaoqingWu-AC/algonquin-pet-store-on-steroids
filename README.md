@@ -4,9 +4,9 @@ The Best Buy Application is a cloud-native, microservices-based solution for man
 ## Need to TO DO
 1. finish steps in lab8
 2. create deployment.yaml files for each microservices
-3. use Azure Service Bus
+3. use Azure Service Bus - done
 4. create docker image links for each microservices - done
-5. finish steps in lab9
+5. finish steps in lab9 - optional
 
 ## Updated Application Architecture
 ![updated-architecture](./assets/updated-architecture.png)
