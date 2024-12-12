@@ -17,7 +17,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: ai-service
-          image: wuiiango/ai-service:latest
+          image: wuiiango/ai-service:v1
           ports:
             - containerPort: 5001
           env:
@@ -26,17 +26,17 @@ spec:
             - name: AZURE_OPENAI_API_VERSION
               value: "2024-07-01-preview"
             - name: AZURE_OPENAI_DEPLOYMENT_NAME # required if using Azure OpenAI
-              value: ""
+              value: "gpt-4"
             - name: AZURE_OPENAI_ENDPOINT # required if using Azure OpenAI
-              value: ""
+              value: "https://assign2openai.openai.azure.com/"
             - name: AZURE_OPENAI_DALLE_ENDPOINT
-              value: ""
+              value: "https://assign2openai.openai.azure.com/"
             - name: AZURE_OPENAI_DALLE_DEPLOYMENT_NAME
-              value: ""
+              value: "dall-e-3"
             - name: OPENAI_API_KEY # always required
               valueFrom:
                 secretKeyRef:
-                  name: openai-api-secret
+                  name: secrets
                   key: OPENAI_API_KEY
           resources:
             requests:
