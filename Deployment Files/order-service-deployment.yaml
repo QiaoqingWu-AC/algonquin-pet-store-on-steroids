@@ -24,12 +24,12 @@ spec:
             - name: AZURE_SERVICE_BUS_CONNECTION_STRING
               valueFrom:
                 secretKeyRef:
-                  name: azure-service-bus-secret
+                  name: secrets
                   key: AZURE_SERVICE_BUS_CONNECTION_STRING
             - name: ORDER_QUEUE_NAME
               valueFrom:
                 secretKeyRef:
-                  name: azure-service-bus-secret
+                  name: secrets
                   key: ORDER_QUEUE_NAME
             - name: FASTIFY_ADDRESS
               value: "0.0.0.0"
