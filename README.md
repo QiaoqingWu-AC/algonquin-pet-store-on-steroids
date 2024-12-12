@@ -45,3 +45,37 @@ The Best Buy Application is a cloud-native, microservices-based solution for man
   - Security channel scheduler: `No schedule`.
   - Authentication and Authorization: `Local accounts with Kubernetes RBAC`.
 3. Create two node pools: `systemnodes` and `workernodes`.
+
+## Table of Microservice Repositories
+A table listing each microservice repository and its GitHub link.
+| Service             | Repository Link                                   |
+|----------------------|---------------------------------------------------|
+| Store-Front          | [GitHub Link](https://github.com/QiaoqingWu-AC/store-front-L8)          |
+| Store-Admin          | [GitHub Link](https://github.com/QiaoqingWu-AC/store-admin-L8)          |
+| Order-Service        | [GitHub Link](https://github.com/QiaoqingWu-AC/order-service-L8)        |
+| Product-Service      | [GitHub Link](https://github.com/QiaoqingWu-AC/product-service-L8)      |
+| Makeline-Service     | [GitHub Link](https://github.com/QiaoqingWu-AC/makeline-service-L8)     |
+| AI-Service           | [GitHub Link](https://github.com/QiaoqingWu-AC/ai-service-L8)           |
+| MongoDB              | [GitHub Link](https://github.com/docker-library/mongo)              |
+| Virtual-Customer     | [GitHub Link](https://github.com/QiaoqingWu-AC/virtual-customer-L8)     |
+| Virtual-Worker       | [GitHub Link](https://github.com/QiaoqingWu-AC/virtual-worker-L8)       |
+
+## Table of Docker Images
+**TO DO: All docker images need to be created and updated here.**<br>
+A table listing all Docker images you created, including their names and links to their Docker Hub repositories.
+| Service             | Docker Image Link                                           |
+|----------------------|------------------------------------------------------------|
+| Store-Front          | [Docker Hub Link](https://hub.docker.com/repository/docker/wuiiango/store-front/general)          |
+| Store-Admin          | [Docker Hub Link](https://hub.docker.com/r/<your-username>/store-admin)          |
+| Order-Service        | [Docker Hub Link](https://hub.docker.com/r/<your-username>/order-service)        |
+| Product-Service      | [Docker Hub Link](https://hub.docker.com/r/<your-username>/product-service)      |
+| Makeline-Service     | [Docker Hub Link](https://hub.docker.com/r/<your-username>/makeline-service)     |
+| AI-Service           | [Docker Hub Link](https://hub.docker.com/r/<your-username>/ai-service)           |
+| MongoDB              | [Docker Hub Link](https://hub.docker.com/_/mongo)              |
+| Virtual-Customer     | [Docker Hub Link](https://hub.docker.com/r/<your-username>/virtual-customer)     |
+| Virtual-Worker       | [Docker Hub Link](https://hub.docker.com/r/<your-username>/virtual-worker)       |
+
+## Any Issues or Limitations in the implementation (Optional)
+
+## Demo Video
+YouTube Link: 
