@@ -9,7 +9,7 @@ The Best Buy Application is a cloud-native, microservices-based solution for man
 5. finish steps in lab9
 
 ## Updated Application Architecture
-![updated-architecture](./img/updated-architecture.png)
+![updated-architecture](./assets/updated-architecture.png)
 
 ## Application and Architecture Explanation
 ### Application Functionality
