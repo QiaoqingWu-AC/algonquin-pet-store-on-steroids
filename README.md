@@ -1,4 +1,5 @@
 # CST 8915 - Assignment 2
+### Student Name: Qiaoqing Wu (041076817)
 The Best Buy Application is a cloud-native, microservices-based solution for managing product data, order, and customer interactions. It integrates AI-powered product descriptions and image generation using GPT-4 and DALL-E to enhance user experience. The application leverages Azure Service Bus as a backing service for order queuing and is deployed on a Kubernetes Cluster, ensuring scalability, reliability, and modularity.
 
 ## Updated Application Architecture
@@ -122,5 +123,4 @@ A table listing all Docker images you created, including their names and links t
 ## Demo Video
 YouTube Link: https://youtu.be/f2cB8Ds-0Y8
 
-## Any Issues or Limitations in the implementation (Optional)
 
