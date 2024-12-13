@@ -17,7 +17,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: makeline-service
-          image: wuiiango/makeline-service:v1 # Custom Makeline service image
+          image: wuiiango/makeline-service:v5 # Custom Makeline service image
           ports:
             - containerPort: 3001 # Makeline service listens on this port
           env: # Environment variables for configuration
@@ -31,6 +31,8 @@ spec:
                 secretKeyRef:
                   name: secrets
                   key: ORDER_QUEUE_NAME
+            - name: ORDER_QUEUE_URI
+              value: "https://AlgonquinPetStore.servicebus.windows.net/order-queue"
             - name: ORDER_DB_URI
               value: "mongodb://mongodb:27017" # MongoDB connection string
             - name: ORDER_DB_NAME
