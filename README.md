@@ -29,7 +29,6 @@ The Best Buy Application is a cloud-native, microservices-based solution for man
 5. Employees monitor and manage orders via the **Store-Admin** application.
 
 ## Deployment Instructions
-**TO DO: Step-by-step instructions to deploy the application in a Kubernetes cluster.**
 ### Step 1: Create Azure Kubernetes Cluster
 1. Go to Azure Portal and search for **Azure Kubernetes Cluster**, then click **Create**.
 2. In the Basics tap fill in the following details:
@@ -45,6 +44,60 @@ The Best Buy Application is a cloud-native, microservices-based solution for man
   - Security channel scheduler: `No schedule`.
   - Authentication and Authorization: `Local accounts with Kubernetes RBAC`.
 3. Create two node pools: `systemnodes` and `workernodes`.
+
+### Step 2: Connect to the AKS Cluster
+1. Use the Azure CLI to connect to the AKS cluster:
+```bash
+az aks get-credentials --resource-group <resource-group-name> --name AlgonquinPetStoreOnSteroidCluster
+```
+Replace <resource-group-name> with your Azure Resource Group name.
+
+2. Verify the connection:
+```bash
+kubectl get nodes
+```
+You should see a list of nodes in your cluster.
+
+### Step 3: Apply Secrets and Microservices Deployments
+1. Git clone the repository and navigate to `Deployment Files` folder:
+```bash
+git clone https://github.com/QiaoqingWu-AC/assign2-algonquin-pet-store-on-steroids.git
+cd '.\Deployment Files\'
+```
+
+2. Apply the secret to the cluster:
+```bash
+kubectl apply -f secrets.yaml
+```
+
+3. Apply each YAML file:
+```bash
+kubectl apply -f order-service-deployment.yaml
+kubectl apply -f product-service-deployment.yaml
+kubectl apply -f makeline-service-deployment.yaml
+kubectl apply -f store-front-deployment.yaml
+kubectl apply -f store-admin-deployment.yaml
+kubectl apply -f mongodb-deployment.yaml
+kubectl apply -f ai-service-deployment.yaml
+```
+
+4. Verify deployments and services:
+```bash
+kubectl get pods
+kubectl get services
+```
+
+### Step 4: Access the Store Front
+1. Identify the external IP for the store-front service:
+```bash
+kubectl get svc store-front
+```
+Look for the EXTERNAL-IP field.
+
+2. Open the store-front application in your browser:
+```arduino
+http://<EXTERNAL-IP>
+```
 
 ## Table of Microservice Repositories
 A table listing each microservice repository and its GitHub link.
